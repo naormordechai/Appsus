@@ -1,6 +1,4 @@
-
 import myRoutes from './routes.js'
-
 
 Vue.use(VueRouter)
 
