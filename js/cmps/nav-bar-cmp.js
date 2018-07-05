@@ -9,7 +9,7 @@ export default {
         </nav>
 	`,
     data() {
-
+        return {}
     },
 
 }

@@ -9,9 +9,6 @@ new Vue({
     el: '#app',
     router: myRouter,
 
-    data: {
-
-    },
     components: {
         navBar,
     }
