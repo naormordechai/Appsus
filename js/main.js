@@ -1,3 +1,4 @@
+import navBar from './cmps/nav-bar-cmp.js';
 import myRoutes from './routes.js'
 
 Vue.use(VueRouter)
@@ -12,6 +13,6 @@ new Vue({
 
     },
     components: {
-
+        navBar,
     }
 })
