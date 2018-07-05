@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appsus</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav>
+            <router-link to="/">Home</router-link>
+            <router-link to="/mister-keep">mister keep</router-link>
+            <router-link to="/mister-email">mister email</router-link>
+        </nav>
+        <router-view></router-view>
+    </div>
+    <script src="lib/veu.js"></script>
+    <script src="lib/vue-router.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
