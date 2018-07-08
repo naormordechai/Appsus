@@ -8,9 +8,9 @@ import emailSort from '../../cmps/cmps-email/email-sort-cmp.js';
 export default {
     template: `
     <section class = "emails-app">
-        <email-sort @doSort="displayEmailsBySort"></email-sort>
-        <div>
         
+        <email-sort @doSort="displayEmailsBySort"></email-sort>
+        <div class = "text-align">
             <router-link to="/email-compose">
                 <button>compose</button>
             </router-link>
@@ -68,7 +68,7 @@ export default {
         emailsToShow() {
             var emailsToShow = this.emails
             if (this.filter) {
-                emailsToShow = emailsToShow.filter(email => email.subject.includes(this.filter))
+                emailsToShow = emailsToShow.filter(email => email.title.includes(this.filter))
             }
             if (this.filterRadio) {
                 switch (this.filterRadio) {
@@ -92,6 +92,7 @@ export default {
     },
     components: {
         emailList,
-        emailSort
+        emailSort,
+        
     }
 }

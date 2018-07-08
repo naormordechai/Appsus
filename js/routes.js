@@ -13,3 +13,4 @@ export default [
 	{ path: '/email-compose', component: emailCompose },
     
 ]
+

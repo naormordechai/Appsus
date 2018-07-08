@@ -3,10 +3,12 @@ import emailService from '../../service/emails-service.js'
 export default {
     template: `
         <section v-if = "email">
-            <button @click = "removeEmail()">Delete</button>
+            <div class = "flex-n column align-items">
             <h2>{{email.title}}</h2>
             {{email.subject}}
+            <button @click = "removeEmail()">Delete</button>
 
+            </div>
         </section>
     `,
     data() {
@@ -16,6 +18,7 @@ export default {
     },
     created() {
         this.loadEmail();
+        
     },
     methods: {
         loadEmail() {
