@@ -12,8 +12,8 @@ export default {
                 <li class="flex txt" v-for="(todo, idx) in todos">
                     <div class="note-container" :style="{ backgroundColor: todo.activeColor }">
                         <input type="checkbox" @change="markTodo(idx)">
-                        <span v-if="todo.isMarked===true" class="line-through">{{todo.txt}}</span>
-                        <span v-else>{{todo.txt}}</span>
+                        <span v-if="todo.isMarked===true" class="line-through txt-board">{{todo.txt}}</span>
+                        <span v-else class="txt-board">{{todo.txt}}</span>
                         <input v-if="todo.isColorPickerOn" type="color" v-model="currColorValue" value="#00ffff"
                         class="col-picker" @change="updateColor(idx)" ref="pick">
                     </div>
