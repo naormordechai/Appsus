@@ -6,7 +6,7 @@ export default {
         <!--<input type="file" accept="image/*"><img src="">-->
             <input v-model="txtInput" type="text" placeholder="new note..." ref="input">
             <button class="post-btn"  @click="addTxt">{{btnStatus}}</button>
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." v-model="searchedValue">
             <button>🔍</button>
             <ul>
                 <li class="txt flex" v-for="(txt, idx) in txts">     
@@ -33,7 +33,8 @@ export default {
             txts: txtService.query(),
             btnStatus: 'Add',
             currIdx: null, 
-            currColorValue: ''   
+            currColorValue: '',   
+            searchedValue:'',
             
         }
     },
@@ -68,6 +69,9 @@ export default {
     },
     computed: {
     },
-    watch: {           
+    watch: {  
+        searchedValue: function() {
+            console.log()
+        }         
     }
 }
