@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background-color: skyblue;
+}
+.appsus-head-section {
+    text-align: center;
+}
+
+.nav-bar {
+    text-align: center;
+}
+
+.nav-bar-item {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 1.5em;
+}
+
+.appsus-head-title {
+    font-family: cursive;
+    font-size: 5em;
+    text-align: center;
+    color: yellowgreen;
+    margin: 10px;
+}

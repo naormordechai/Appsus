@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    /*outline: rgb(7, 1, 20) solid 1px;*/
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    font-family: monospace;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: greenyellow;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mr-keep-head-title {
+    text-align: center;
+    font-family: cursive;
+    font-size: 3em;
+    margin: 10px 10px 150px 10px;
+    color: yellowgreen;
+}
+
+.notes-section {
+    max-width: 600px;
+    height: auto;
+}
+
+.post-btn {
+    background-color: lightgreen;
+}
+
+.del-btn {
+    background-color: lightcoral;
+}
+
+.pin-btn {
+    background-color: cadetblue;
+}
+
+.paint-btn {
+    background-color: crimson;
+}
+
+.edit-btn {
+    background-color: blueviolet;
+}
+
+.add-todo:hover {
+    font-size: 1.1em;
+    cursor:context-menu;
+    color: rgb(33, 224, 65);
+}
+
+.add-img:hover {
+    font-size: 1.1em;
+    cursor:context-menu;
+    color:  rgb(33, 224, 65);
+}
+
+.txt {
+    font-family: monospace;
+    font-size: 1.2em;
+    width: 600px;
+}
+
+.txt-board {
+    box-shadow: 3px 3px #888888;
+    margin: 20px;
+}
+
+.img-icon {
+    font-size: 1.5em;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.mister-keep-app {
+    display: flex;
+    justify-content: center;
+}
+
+.col-picker {
+    width: 20px;
+}
+
+

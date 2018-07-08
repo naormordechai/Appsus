@@ -1,7 +1,9 @@
 export default{
     template:`
-    <section>
-        <h1>Appsus</h1>
+    <section class="appsus-head-section">
+        <h1 class="appsus-head-title">Appsus</h1>
+        <img src="../../img/email.jpg">
+        <img src="../../img/todo.png">
     </section>
     `,
     components:{

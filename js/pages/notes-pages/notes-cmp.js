@@ -7,12 +7,14 @@ export default {
     template: `
         <section>
             <header>
-                <h1>MISTER KIPPER APP</h1>
+                <h1 class="mr-keep-head-title">MISTER KIPPER APP</h1>
             </header>
-            <main>
+            <main class="mister-keep-app">
+                <div>
                 <note-txt></note-txt>
                 <note-todos></note-todos>
                 <note-img></note-img>
+</div>
             </main>
         </section>
     `,
