@@ -2,12 +2,27 @@ import txtService from '../../service/notes-service/txt-service.js';
 
 export default {
     template: `
-        <section>
-            <input v-model="txtInput" type="text" placeholder="Write new note...">
-            <button @click="addTxt">Post</button>
+        <section class="notes-section">
+        <!--<input type="file" accept="image/*"><img src="">-->
+            <input v-model="txtInput" type="text" placeholder="new note..." ref="input">
+            <button class="post-btn"  @click="addTxt">{{btnStatus}}</button>
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
             <ul>
-                <li v-for="(txt, idx) in txts" v-if="txts">
-                    {{txt.txt}} <button @click="deleteTxt(idx)">Delete Text</button>
+                <li class="txt flex" v-for="(txt, idx) in txts">     
+                    <div>               
+                        <input v-if="txt.isColorPickerOn" type="color" v-model="currColorValue" value="#00ffff"
+                         class="col-picker" @change="updateColor(idx)" ref="pick">
+                        <span class="txt-board" :style="{ backgroundColor: txt.activeColor }">
+                            {{txt.txt}} 
+                        </span>
+                    </div>
+                    <div>
+                        <button class="edit-btn" @click="editTxt(idx)">✎</button>
+                        <button class="pin-btn" @click="putFirst(idx)">🖈</button>
+                        <button class="paint-btn" @click="paintTxt(idx)">🖌</button>
+                        <button class="del-btn" @click="deleteTxt(idx)">🗑</button>    
+                    </div>                
                 </li>
             </ul>
         </section>
@@ -16,28 +31,43 @@ export default {
         return {
             txtInput: '',
             txts: txtService.query(),
-            newTxt: '',
-
+            btnStatus: 'Add',
+            currIdx: null, 
+            currColorValue: ''   
+            
         }
     },
-    methods: {
+    methods: {      
+        updateColor(idx, color) {
+            color = this.currColorValue;
+            txtService.updateColor(idx, color);
+            this.txts[idx].isColorPickerOn = false;                       
+        },  
+        paintTxt(idx) {
+            this.txts[idx].isColorPickerOn = true;           
+        },
+        putFirst(idx) {
+            txtService.putFirst(idx);            
+        },
+        editTxt(idx) {
+            this.btnStatus = 'Update'
+            this.currIdx = idx;
+            setTimeout(() => {
+                this.txtInput = this.$refs.input.value = this.txts[idx].txt;
+            }, 1);
+        },
         addTxt() {
-            txtService.createNewTxt(this.txtInput);
+            if (this.btnStatus === 'Add') txtService.createTxt(this.txtInput);
+            else txtService.updateTxt(this.currIdx, this.txtInput);
             this.txtInput = '';
-            console.log('Txts array: ', this.txts);
+            this.btnStatus = 'Add';
         },
         deleteTxt(idx) {
-            txtService.deleteTxt(idx);               
-                            
+            txtService.deleteTxt(idx);
         }
     },
     computed: {
-
     },
-    watch: {
-        txtInput: function () {
-
-
-        },
+    watch: {           
     }
 }

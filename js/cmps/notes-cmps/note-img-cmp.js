@@ -1,5 +1,5 @@
 export default {
     template:`
-        <p>+Add new Image Note</p>
+        <p class="add-img">+Add Image Note 🖺</p>
     `,
 }
