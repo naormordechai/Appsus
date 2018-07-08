@@ -4,8 +4,8 @@ import progressBar from './progress-bar-cmp.js'
 export default {
     props: [],
     template: `
-        <section>
-            <p> You readed a {{updateCountReadedEmails}} {{countEmailsReaded}} / {{getLength}} {{lengthEmails}} emails</p>
+        <section class = "text-align section-email-status">
+            <p> You readed a <span class = "red">{{updateCountReadedEmails}} {{countEmailsReaded}}</span> / {{getLength}} {{lengthEmails}} emails</p>
             <progress-bar v-bind:emails = "emailsPrm"></progress-bar>
         </section>
     `,

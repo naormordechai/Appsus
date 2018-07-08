@@ -7,6 +7,7 @@ export default {
             title<input type = "text" @input = "setTitle">
             subject<input type = "text" @input = "setSubject">
             <button @click = "addNewEmail">Send</button>
+            <button @click = "back">Back</button>
         </section>
     `,
     data() {
@@ -38,6 +39,11 @@ export default {
         },
         addNewEmail() {
             this.emails.unshift(this.newEmail)
+            this.$router.push('/mister-email');
+        },
+        back(){
+            this.$router.push('/mister-email');
+
         }
     }
 }

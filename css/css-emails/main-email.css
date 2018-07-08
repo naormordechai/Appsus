@@ -8,12 +8,31 @@ li{
 
 /* helpers */
 
-.flex{
+.flex-n{
     display: flex;
 }
 
 .column{
     flex-direction: column;
+}
+.align-items{
+    align-items: center;
+}
+
+.justify-content{
+    justify-content: center;
+}
+
+.text-align{
+    text-align: center;
+}
+
+.padding{
+    padding: 5px;
+}
+
+.red{
+    color: red;
 }
 
 /*  title*/ 
@@ -52,3 +71,31 @@ li{
     color: blue;
 }
 
+
+/* emails-sort */
+
+.emails-sort{
+    padding: 20px;
+    margin-top: 20px;
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+.sort{
+    padding:3px;
+    font-size: 15px;
+    width: 150px;
+}
+
+/* filter */
+
+.filter-part{
+    margin-top: 20px;
+}
+
+/* section-emails-status */
+
+.section-email-status{
+    font-size: 18px;
+
+}

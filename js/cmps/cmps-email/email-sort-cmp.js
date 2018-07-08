@@ -4,11 +4,13 @@ export default {
     props: [],
 
     template: `
-    <div>
-        <select id="by" @change="updateFilter">
+    <div class = "emails-sort">
+        <span> Sort By:</span>
+        <select id="by" @change="updateFilter" class = "sort">
+					<option>choose</option>
 					<option value="title">title</option>
 					<option value="deta">date</option>
-	    </select>
+        </select>
     </div>
     `,
     data() {

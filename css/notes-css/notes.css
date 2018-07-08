@@ -10,6 +10,7 @@ ul {
 button {
     font-family: monospace;
     font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
