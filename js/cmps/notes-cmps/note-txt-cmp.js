@@ -3,17 +3,17 @@ import txtService from '../../service/notes-service/txt-service.js';
 export default {
     template: `
         <section class="notes-section">
-        <!--<input type="file" accept="image/*"><img src="">-->
+            <h1><i>Notes</i></h1>
             <input v-model="txtInput" type="text" placeholder="new note..." ref="input">
             <button class="post-btn"  @click="addTxt">{{btnStatus}}</button>
             <input type="text" placeholder="Search..." v-model="searchedValue">
             <button>🔍</button>
             <ul>
                 <li class="txt flex" v-for="(txt, idx) in txts">     
-                    <div>               
+                    <div class="note-container" :style="{ backgroundColor: txt.activeColor }">               
                         <input v-if="txt.isColorPickerOn" type="color" v-model="currColorValue" value="#00ffff"
                          class="col-picker" @change="updateColor(idx)" ref="pick">
-                        <span class="txt-board" :style="{ backgroundColor: txt.activeColor }">
+                        <span class="txt-board" >
                             {{txt.txt}} 
                         </span>
                     </div>

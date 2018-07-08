@@ -11,8 +11,8 @@ export default {
             </header>
             <main class="mister-keep-app">
                 <div>
-                <note-txt></note-txt>
-                <note-todos></note-todos>
+                <note-txt class="mr-keep-cmp"></note-txt>
+                <note-todos class="mr-keep-cmp"></note-todos>
                 <note-img></note-img>
 </div>
             </main>

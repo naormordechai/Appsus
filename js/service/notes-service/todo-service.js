@@ -1,7 +1,22 @@
 var todos = [
-    { txt: 'learn JS', isMarked: false },
-    { txt: 'grasp html', isMarked: false },
-    { txt: 'master CSS', isMarked: false },
+    {
+        txt: 'learn JS',
+        isMarked: false,
+        isColorPickerOn: false,
+        activeColor: 'yellowgreen'
+    },
+    {
+        txt: 'grasp html',
+        isMarked: false,
+        isColorPickerOn: false,
+        activeColor: 'yellowgreen'
+    },
+    {
+        txt: 'master CSS',
+        isMarked: false,
+        isColorPickerOn: false,
+        activeColor: 'yellowgreen'
+    },
 ];
 
 function query() {
@@ -18,14 +33,16 @@ function putFirst(idx) {
 function createTodo(txt) {
     todos.push({
         txt: txt,
-        isMarked: false
+        isMarked: false,
+        isColorPickerOn: false,
+        activeColor: 'yellowgreen'
     });
 }
 
 function updateTodo(idx, txt) {
     console.log('updating todo..')
     todos[idx].txt = txt;
-    
+
 }
 
 function deleteTodo(idx) {
@@ -38,6 +55,10 @@ function markTodo(idx) {
 
 }
 
+function updateColor(idx, color) {
+    todos[idx].activeColor = color;
+}
+
 export default {
     query,
     createTodo,
@@ -45,4 +66,5 @@ export default {
     deleteTodo,
     markTodo,
     putFirst,
+    updateColor,
 }
