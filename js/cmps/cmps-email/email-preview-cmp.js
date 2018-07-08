@@ -1,15 +1,32 @@
 
 export default {
+    props: ['email'],
     template: `
-    <section>
-        <router-link to = "/email-details">
-        {{email.subject}}
-</router-link>
+    <section @click = "changeStatusReaded">
+        <router-link :to="'/email/'+email.id" class = "link-preview">
+            <div class = "email-preview">
+                <h2 class = "title" v-bind:class = "{unread : email.isRead}">{{email.title}}</h2>
+                <p>{{email.subject}}</p>
+                <p>{{email.sentAt}}</p>
+            </div>
+        </router-link>
     </section>
     `,
-    props: ['email'],
-    methods: {
 
+    created() {
+    },
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        changeStatusReaded() {
+            if (!this.email.isRead) {
+                this.email.isRead = !this.email.isRead
+                
+            }
+        }
     }
 
 }
