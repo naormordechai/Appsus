@@ -4,6 +4,7 @@ import emailsService from '../../service/emails-service.js'
 export default {
     template: `
         <section class = "email-compose">
+            <h1 class = "flex-n"> Add email </h1>
             title<input type = "text" @input = "setTitle">
             subject<input type = "text" @input = "setSubject">
             <button @click = "addNewEmail">Send</button>
@@ -13,7 +14,7 @@ export default {
     data() {
         return {
             newEmail: {
-                id:emailsService.makeId(),
+                id: emailsService.makeId(),
                 isRead: false,
                 title: null,
                 sebject: null,
@@ -37,13 +38,17 @@ export default {
             this.newEmail.subject = ev.srcElement.value
             console.log(this.newEmail.subject);
         },
-        addNewEmail() {
+        addNewEmail(ev) {
             this.emails.unshift(this.newEmail)
             this.$router.push('/mister-email');
         },
-        back(){
+        back() {
             this.$router.push('/mister-email');
 
+        },
+        a(ev){
+            console.log(ev);
+            
         }
     }
 }
